@@ -14,7 +14,7 @@ This project uses [keras](http://keras.io "keras") to implement a character-leve
 
 ## Basic usage
 
-eXpose uses zerorpc to host the neural network models as RPC services.  From the top level project directory, you can run the eXpose model in three different modes: URL detection mode, path detection mode, and registry key path detection mode, as follows:
+eXpose uses [zerorpc](http://www.zerorpc.io/ "ZeroRPC") to host the neural network models as RPC services.  From the top level project directory, you can run the eXpose model in three different modes: URL detection mode, path detection mode, and registry key path detection mode, as follows:
 
 `python model_server.py ../data/urls`
 

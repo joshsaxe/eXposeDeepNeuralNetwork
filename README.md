@@ -4,7 +4,7 @@ Attribution: Invincea Labs, josh.saxe@invincea.com
 
 License: (for non-commercial use) https://creativecommons.org/licenses/by-nc/3.0/us/legalcode
 
-This projects implements a character-level convolutional neural network binary classifier designed to do well at cybersecurity detection problems, specifically problems that involve determining whether short, tweet-length character strings (e.g. file paths, URLs) are malicious or not.  The model takes raw character sequences as its input and outputs a 0-1 suspiciousness score.  Specific problems I have tested the model on are:
+This project uses [link](http://keras.io "keras") to implement a character-level convolutional neural network binary classifier designed to do well at cybersecurity detection problems, specifically problems that involve determining whether short, tweet-length character strings (e.g. file paths, URLs) are malicious or not.  The model takes raw character sequences as its input and outputs a 0-1 suspiciousness score.  Specific problems I have tested the model on are:
 
 1. Detecting malicious URLs based on the URL character string (i.e. the model looks at the URL itself, not the contents of the web page the URL points to).  I have found that given at least 1 million training examples balanced between benign and malicious URLs, the model can achieve a > 90% detection rate at a 0.1% false positive rate on this task.
 
@@ -17,7 +17,9 @@ This projects implements a character-level convolutional neural network binary c
 eXpose uses zerorpc to host the neural network models as RPC services.  From the top level project directory, you can run the eXpose model in three different modes: URL detection mode, path detection mode, and registry key path detection mode, as follows:
 
 `python model_server.py ../data/urls`
+
 `python model_server.py ../data/paths`
+
 `python model_server.py ../data/registry`
 
 These commands start a model RPC server and load in trained neural network weights from the data directory such that the neural network will know how to perform detection on the object of interest.  An example client for the model servers is provided in `src/example_model_client.py` for your convenience.  This script tests the URL detection functionality of eXpose.  You can run this test as follows:

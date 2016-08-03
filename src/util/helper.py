@@ -1,9 +1,7 @@
 import json
-import hashlib
 import sys
 import argparse
 import pprint
-import tinys3
 import datetime
 import time
 
